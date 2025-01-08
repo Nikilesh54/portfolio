@@ -45,7 +45,7 @@ const AboutSection: React.FC = () => {
                         <div className="about-wrapper__info load-hidden">
                             <p className="about-info-text">
                                 👋 Hi, I'm Nikilesh – a tech enthusiast, full-stack developer, and master's student at Virginia
-                                Tech <img src="public/VT.png " alt="VT Logo" className="about-inline-logo"/>, passionate about coding, cloud, and solving problems with a dash of humor! <img src="public/Semicolon.png" alt="Semicolon Logo" className="about-inline-logo"/>🚀
+                                Tech <img src="/VT.png " alt="VT Logo" className="about-inline-logo"/>, passionate about coding, cloud, and solving problems with a dash of humor! <img src="/Semicolon.png" alt="Semicolon Logo" className="about-inline-logo"/>🚀
                             </p>
                         {/* Skills */}
                         <div className="skills-card">
