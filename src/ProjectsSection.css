@@ -5,7 +5,7 @@
     padding: 2rem;
     margin-bottom: 130px;
     background: #0f172a;
-
+    box-sizing: border-box;
 }
 
 .projects-title {

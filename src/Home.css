@@ -2,9 +2,10 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
     width: 100%;
+
 }
+
 html {
     font-size: 62.5%;
 }
@@ -294,7 +295,6 @@ a:hover {
     color: #f8fafc;
     padding: 5rem 2rem;
     text-align: center;
-    overflow: hidden;
     background: #1e293b;
 }
 

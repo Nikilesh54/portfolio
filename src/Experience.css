@@ -143,8 +143,10 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .col-lg-4 {
