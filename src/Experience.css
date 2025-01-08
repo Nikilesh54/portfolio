@@ -1,0 +1,162 @@
+#experience {
+    position: relative;
+}
+
+.timeline-container {
+    position: relative;
+    padding-left: 50px; /* Increased padding to move timeline more to the right */
+    margin-top: 50px;
+}
+
+.timeline-bar {
+    position: absolute;
+    left: 20px; /* Adjusted position to move the bar right */
+    top: 0;
+    width: 8px;
+    height: 100%;
+    background: #334155;
+}
+
+.timeline-progress {
+    position: absolute;
+    width: 100%;
+    height: var(--timeline-progress, 0%);
+    background: #007bff;
+    transition: height 0.3s ease-out;
+}
+
+.experience-content {
+    position: relative;
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    background: #1e293b;
+}
+
+.experience-header {
+    margin-bottom: 20px;
+}
+
+.role-period {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.Experience-Role {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin: 0;
+}
+
+.period {
+    font-size: 1.2rem;
+    color: white;
+    background: #007bff;
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+
+.experience-details p {
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.tech-stack {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+    font-size: 1.5rem;
+}
+
+.tech-stack h5 {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+.tech-icons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tech-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.tech-logo:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline-container {
+        padding-left: 50px;
+    }
+
+    .timeline-bar {
+        left: 30px;
+    }
+
+    .role-period {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .period {
+        margin-top: 5px;
+    }
+}
+
+/* Ensure project wrapper text is visible */
+.project-wrapper__text {
+    padding: 20px;
+    margin-bottom: 30px;
+    background: #1e293b;
+}
+
+.project-wrapper__text-title {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+/* Ensure content visibility */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-lg-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+    .col-lg-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
