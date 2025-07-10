@@ -11,9 +11,9 @@ interface Project {
 
 const projects: Project[] = [
     {
-        title: "Banking Management System",
-        description: "Developed an Online Banking System with React and TypeScript, enhancing UI/UX and achieving 99.9% uptime on Azure.",
-        techStack: ["React", "TypeScript", "Azure", "Node.js"],
+        title: "Airbnb Data Analytics Platform",
+        description: "Implemented ETL workflows, optimized data transformation, and designed scalable pipelines for analytics and machine learning deployment.",
+        techStack: ["SQL", "ETL Pipelines", "Data Warehousing"],
         githubUrl: "#"  // Replace with your actual GitHub URL
     },
     {
