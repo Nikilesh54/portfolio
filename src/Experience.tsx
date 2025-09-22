@@ -6,6 +6,7 @@ interface TechStack {
   logo?: string; // optional: hide if missing
 }
 
+
 interface ExperienceItem {
   company: string;
   role: string;
