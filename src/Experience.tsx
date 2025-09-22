@@ -2,122 +2,171 @@ import React, { useEffect, useRef } from 'react';
 import './Experience.css';
 
 interface TechStack {
-    name: string;
-    logo: string;
+  name: string;
+  logo?: string; // optional: hide if missing
 }
 
 interface ExperienceItem {
-    company: string;
-    role: string;
-    period: string;
-    description: string[];
-    techStack: TechStack[];
+  company: string;
+  role: string;
+  period: string; // e.g., "Aug 2024 – May 2025"
+  location?: string;
+  type: 'work' | 'education';
+  description: string;
+  techStack?: TechStack[];
 }
 
 export const Experience: React.FC = () => {
-    const timelineRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const timeline = timelineRef.current;
-            if (timeline) {
-                const timelineTop = timeline.getBoundingClientRect().top;
-                const timelineBottom = timeline.getBoundingClientRect().bottom;
-                const windowHeight = window.innerHeight;
-
-                if (timelineTop < windowHeight && timelineBottom > 0) {
-                    const scrollPercent = (windowHeight - timelineTop) / (windowHeight + timeline.offsetHeight);
-                    const fillHeight = Math.min(Math.max(scrollPercent * 100, 0), 100);
-                    timeline.style.setProperty('--timeline-progress', `${fillHeight}%`);
-                }
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const experiences: ExperienceItem[] = [
-        {
-            company: "Cognizant",
-            role: "Software Engineer",
-            period: "2022 - 2023",
-            description: [
-                "Developed and maintained robust APIs using Python to manage insurance portfolios, client policies, and policy creation processes, enhancing data retrieval efficiency by 30% and reducing error rates by 20%.",
-                "Modeled and implemented user-friendly front-end interfaces with React functional components for seamless policy management and portfolio tracking, which improved user interaction and satisfaction scores by 35%.",
-                "Built and optimized serverless backend solutions using AWS Lambda, integrating with AWS VPCs to ensure secure and scalable handling of policy data, which led to a 25% reduction in operational costs.",
-                "Architected and administered AWS infrastructure to support high-volume policy management and client interactions, achieving 99.9% system uptime and improving overall system reliability.",
-                "Collaborated closely with insurance specialists to implement new features and enhancements tailored to policy management needs, consistently delivering projects on time and increasing feature adoption by 40%."
-            ],
-            techStack: [
-                { name: "React", logo: "/Images/LogosFinal/React.png" },
-                { name: "Python", logo: "/Images/LogosFinal/Python.png" },
-                { name: "AWS", logo: "/Images/LogosFinal/AWS.png" },
-                { name: "TypeScript", logo: "/Images/LogosFinal/Typescript.png" }
-            ]
-        },
-        {
-            company: "Cognizant",
-            role: "Software Development Intern",
-            period: "2021 - 2022",
-            description: [
-                "Designed customer profile using React, successfully improving user experience and streamlining the profile management process, resulting in 99 out of 100 users reporting a smoother experience.",
-                "Created and deployed corresponding APIs for profile updates, ensuring data integrity and reducing update processing time by 20%.",
-                "Resolved 20+ client-reported bugs, enhancing application reliability and user satisfaction.",
-                "Documented processes, tasks, and development workflows comprehensively, creating clear and accessible documentation on Confluence to support team collaboration and knowledge sharing."
-            ],
-            techStack: [
-                { name: "React", logo: "/Images/LogosFinal/React.png" },
-                { name: "JavaScript", logo: "/Images/LogosFinal/JavaScript.png" },
-                { name: "Node.js", logo: "/Images/LogosFinal/NodeJS.png" }
-            ]
+  useEffect(() => {
+    const handleScroll = () => {
+      const timeline = timelineRef.current;
+      if (timeline) {
+        const rect = timeline.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const scrollPercent = (windowHeight - rect.top) / (windowHeight + timeline.offsetHeight);
+          const fillHeight = Math.min(Math.max(scrollPercent * 100, 0), 100);
+          timeline.style.setProperty('--timeline-progress', `${fillHeight}%`);
         }
-    ];
+      }
+    };
 
-    return (
-        <section id="experience">
-            <div className="project-wrapper">
-                <h2 className="section-title dark-blue-text">Experience</h2>
-                <div className="timeline-container" ref={timelineRef}>
-                    <div className="timeline-bar">
-                        <div className="timeline-progress"></div>
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const experiences: ExperienceItem[] = [
+    {
+      company: 'Virginia Tech',
+      role: 'Software Engineer',
+      period: 'Aug 2024 – May 2025',
+      location: 'Blacksburg, VA, USA',
+      type: 'work',
+      description: 'Developing full-stack web applications for portfolio tracking with React.js, PostgreSQL, and Spring Boot. Implementing CI/CD pipelines and collaborating in Agile environments.',
+      techStack: [
+        { name: 'React', logo: '/Images/LogosFinal/React.png' },
+        { name: 'CSS', logo: '/Images/LogosFinal/CSS.png' },
+        { name: 'PostgreSQL', logo: '/Images/LogosFinal/PostgreSQL.png' },
+        { name: 'Spring Boot', logo: '/Images/LogosFinal/SpringBoot.png' },
+        { name: 'Postman', logo: '/Images/LogosFinal/Postman.png' },
+        { name: 'Jenkins', logo: '/Images/LogosFinal/Jenkins.png' }
+      ]
+    },
+    {
+      company: 'Virginia Tech',
+      role: 'Master of Science in Computer Science',
+      period: 'Aug 2023 – May 2025',
+      location: 'Blacksburg, VA, USA',
+      type: 'education',
+      description: 'Advanced coursework in algorithms, system design, software engineering, database systems, and computer networks. Focus on modern software development practices and distributed systems.'
+    },
+    {
+      company: 'Cognizant',
+      role: 'Software Engineer',
+      period: 'Feb 2022 – Jul 2023',
+      location: 'India',
+      type: 'work',
+      description: 'Built and maintained web applications for insurance portfolio management using Java Spring Boot and React.js. Implemented cloud solutions on AWS and contributed to team documentation and best practices.',
+      techStack: [
+        { name: 'Java', logo: '/Images/LogosFinal/Java.png' },
+        { name: 'Spring Boot', logo: '/Images/LogosFinal/SpringBoot.png' },
+        { name: 'React', logo: '/Images/LogosFinal/React.png' },
+        { name: 'AWS', logo: '/Images/LogosFinal/AWS.png' },
+        { name: 'Lambda', logo: '/Images/LogosFinal/Lambda.png' },
+        { name: 'S3', logo: '/Images/LogosFinal/S3.png' },
+        { name: 'NixOS', logo: '/Images/LogosFinal/NixOS.png' }
+      ]
+    },
+    {
+      company: 'LTIMindtree',
+      role: 'Associate Software Engineer',
+      period: 'Feb 2021 – Dec 2021',
+      location: 'India',
+      type: 'work',
+      description: 'Developed web interfaces for e-commerce product catalogs using HTML, CSS, JavaScript, and Python. Built data sync features with REST APIs and contributed to microservices architecture.',
+      techStack: [
+        { name: 'HTML', logo: '/Images/LogosFinal/HTML.png' },
+        { name: 'CSS', logo: '/Images/LogosFinal/CSS.png' },
+        { name: 'JavaScript', logo: '/Images/LogosFinal/JavaScript.png' },
+        { name: 'Python', logo: '/Images/LogosFinal/Python.png' },
+        { name: 'Redis', logo: '/Images/LogosFinal/Redis.png' },
+        { name: 'Microservices', logo: '/Images/LogosFinal/Microservices.png' }
+      ]
+    }
+  ];
+
+  // Sort experiences by year (most recent first)
+  const sortedExperiences = [...experiences].sort((a, b) => {
+    const yearA = parseInt(a.period.split(' ')[1] || a.period.split(' ')[0]);
+    const yearB = parseInt(b.period.split(' ')[1] || b.period.split(' ')[0]);
+    return yearB - yearA;
+  });
+
+  return (
+    <section id="experience">
+      <div className="project-wrapper">
+        <h2 className="section-title dark-blue-text">Experience</h2>
+        <div className="timeline-container" ref={timelineRef}>
+          <div className="timeline-bar">
+            <div className="timeline-progress"></div>
+          </div>
+
+          <div className="timeline-content">
+            {sortedExperiences.map((exp, index) => (
+              <div 
+                key={index} 
+                className={`timeline-item ${exp.type === 'education' ? 'education' : 'work'}`}
+                style={{ 
+                  '--item-index': index,
+                  '--total-items': sortedExperiences.length
+                } as React.CSSProperties}
+              >
+                <div className="timeline-dot"></div>
+                <div className="timeline-card">
+                  <div className="card-header">
+                    <h3 className="company-name">{exp.company}</h3>
+                    <h4 className="role-title">{exp.role}</h4>
+                    <div className="period-location">
+                      <span className="period">{exp.period}</span>
+                      {exp.location && <span className="location">{exp.location}</span>}
                     </div>
-                    <div className="row">
-                        {experiences.map((exp, index) => (
-                            <div key={index} className="col-lg-4 col-sm-12">
-                                <div className="project-wrapper__text load-hidden">
-                                        <div className="experience-header">
-                                            <h3 className="project-wrapper__text-title">{exp.company}</h3>
-                                            <div className="role-period">
-                                                <h4 className="Experience-Role">{exp.role}</h4>
-                                                <span className="period">{exp.period}</span>
-                                            </div>
-                                        </div>
-                                        <div className="experience-details">
-                                            {exp.description.map((desc, i) => (
-                                                <p key={i} className="mb-4">{desc}</p>
-                                            ))}
-                                        </div>
-                                        <div className="tech-stack">
-                                            <h5>Tech Stack</h5>
-                                            <div className="tech-icons">
-                                                {exp.techStack.map((tech, i) => (
-                                                    <img
-                                                        key={i}
-                                                        src={tech.logo}
-                                                        alt={tech.name}
-                                                        title={tech.name}
-                                                        className="tech-logo"
-                                                    />
-                                                ))}
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                  </div>
+
+                  <div className="card-content">
+                    <p className="experience-description">{exp.description}</p>
+                    
+                    {exp.techStack && exp.techStack.length > 0 && (
+                      <div className="tech-stack">
+                        <div className="tech-icons">
+                          {exp.techStack.map((tech, i) => (
+                            tech.logo ? (
+                              <img
+                                key={i}
+                                src={tech.logo}
+                                alt={tech.name}
+                                title={tech.name}
+                                className="tech-logo"
+                                onError={(e) => {
+                                  (e.currentTarget as HTMLImageElement).style.display = 'none';
+                                }}
+                              />
+                            ) : (
+                              <span key={i} className="tech-pill">{tech.name}</span>
+                            )
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
-            </div>
-        </section>
-    );
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };

@@ -11,12 +11,6 @@ interface Project {
 
 const projects: Project[] = [
     {
-        title: "Banking Management System",
-        description: "Developed an Online Banking System with React and TypeScript, enhancing UI/UX and achieving 99.9% uptime on Azure.",
-        techStack: ["React", "TypeScript", "Azure", "Node.js"],
-        githubUrl: "#"  // Replace with your actual GitHub URL
-    },
-    {
         title: "Encrypting Image",
         description: "Built an AES-256-based image encryption platform ensuring secure and tamper-proof image transmission over untrusted networks.",
         techStack: ["Python", "AES-256", "Cryptography", "REST API"],
@@ -32,6 +26,18 @@ const projects: Project[] = [
         title: "UniNav - Campus Navigation Platform",
         description: "Designed a web-based navigation and event discovery system using React and the What3Words API, enhancing campus navigation and engagement.",
         techStack: ["React", "What3Words API", "MapBox", "Node.js"],
+        githubUrl: "#"
+    },
+    {
+        title: "Airbnb Data Analytics Platform",
+        description: "Built a scalable ETL and sentiment analysis pipeline integrating structured and unstructured data, cutting model training time by 30%.",
+        techStack: ["SQL", "ETL Pipelines", "Data Warehousing"],
+        githubUrl: "#"
+    },
+    {
+        title: "Real-time Call Fraud Detection Platform",
+        description: "Developed a fault-tolerant streaming ML system for telecom fraud detection, improving precision from 0.82 to 0.91 with real-time alerts.",
+        techStack: ["Azure", "Delta Lake", "PySpark", "Scikit-learn"],
         githubUrl: "#"
     }
 ];
