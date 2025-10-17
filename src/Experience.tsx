@@ -41,19 +41,17 @@ export const Experience: React.FC = () => {
 
   const experiences: ExperienceItem[] = [
     {
-      company: 'Virginia Tech',
+      company: 'Caterpillar Inc.',
       role: 'Software Engineer',
-      period: 'Aug 2024 – May 2025',
-      location: 'Blacksburg, VA, USA',
+      period: 'Feb 2024 – Present',
+      location: 'USA',
       type: 'work',
-      description: 'Developing full-stack web applications for portfolio tracking with React.js, PostgreSQL, and Spring Boot. Implementing CI/CD pipelines and collaborating in Agile environments.',
+      description: 'Developing enterprise software solutions and applications. Working with modern technologies to deliver robust and scalable solutions.',
       techStack: [
-        { name: 'React', logo: '/Images/LogosFinal/React.png' },
-        { name: 'CSS', logo: '/Images/LogosFinal/CSS.png' },
-        { name: 'PostgreSQL', logo: '/Images/LogosFinal/PostgreSQL.png' },
+        { name: 'Java', logo: '/Images/LogosFinal/Java.png' },
         { name: 'Spring Boot', logo: '/Images/LogosFinal/SpringBoot.png' },
-        { name: 'Postman', logo: '/Images/LogosFinal/Postman.png' },
-        { name: 'Jenkins', logo: '/Images/LogosFinal/Jenkins.png' }
+        { name: 'React', logo: '/Images/LogosFinal/React.png' },
+        { name: 'PostgreSQL', logo: '/Images/LogosFinal/PostgreSQL.png' }
       ]
     },
     {
@@ -67,7 +65,7 @@ export const Experience: React.FC = () => {
     {
       company: 'Cognizant',
       role: 'Software Engineer',
-      period: 'Feb 2022 – Jul 2023',
+      period: 'Jan 2021 – Jul 2023',
       location: 'India',
       type: 'work',
       description: 'Built and maintained web applications for insurance portfolio management using Java Spring Boot and React.js. Implemented cloud solutions on AWS and contributed to team documentation and best practices.',
@@ -79,22 +77,6 @@ export const Experience: React.FC = () => {
         { name: 'Lambda', logo: '/Images/LogosFinal/Lambda.png' },
         { name: 'S3', logo: '/Images/LogosFinal/S3.png' },
         { name: 'NixOS', logo: '/Images/LogosFinal/NixOS.png' }
-      ]
-    },
-    {
-      company: 'LTIMindtree',
-      role: 'Associate Software Engineer',
-      period: 'Feb 2021 – Dec 2021',
-      location: 'India',
-      type: 'work',
-      description: 'Developed web interfaces for e-commerce product catalogs using HTML, CSS, JavaScript, and Python. Built data sync features with REST APIs and contributed to microservices architecture.',
-      techStack: [
-        { name: 'HTML', logo: '/Images/LogosFinal/HTML.png' },
-        { name: 'CSS', logo: '/Images/LogosFinal/CSS.png' },
-        { name: 'JavaScript', logo: '/Images/LogosFinal/JavaScript.png' },
-        { name: 'Python', logo: '/Images/LogosFinal/Python.png' },
-        { name: 'Redis', logo: '/Images/LogosFinal/Redis.png' },
-        { name: 'Microservices', logo: '/Images/LogosFinal/Microservices.png' }
       ]
     }
   ];
