@@ -227,7 +227,7 @@ const Home: React.FC = () => {
                             <a rel="noreferrer" href="https://x.com/MN040601" target="_blank">
                                 <i className="fa fa-twitter fa-inverse"></i>
                             </a>
-                            <a rel="noreferrer" href="https://www.linkedin.com/in/nikileshmadala/" target="_blank">
+                            <a rel="noreferrer" href="https://www.linkedin.com/in/nikileshm/" target="_blank">
                                 <i className="fa fa-linkedin fa-inverse"></i>
                             </a>
                             <a rel="noreferrer" href="https://github.com/Nikilesh54" target="_blank">
