@@ -43,7 +43,7 @@ export const Experience: React.FC = () => {
     {
       company: 'Caterpillar Inc.',
       role: 'Software Engineer',
-      period: 'Feb 2024 – Present',
+      period: 'May 2025 – Present',
       location: 'USA',
       type: 'work',
       description: 'Developing enterprise software solutions and applications. Working with modern technologies to deliver robust and scalable solutions.',
